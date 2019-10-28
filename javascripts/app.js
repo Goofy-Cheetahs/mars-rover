@@ -3,12 +3,40 @@ class Rover {
     direction:'N'
   }
 
-  turnLeft(newDirection) {
-    this.direction = newDirection;
+  turnLeft() {
+  switch(this.direction){
+    case "N":
+      this.direction = "W";
+      break;
+    case "W":
+      this.direction = "S";
+      break;
+    case "S":
+      this.direction = "E";
+      break;
+    case "E":
+      this.direction = "N";
+      break;
+    }
+  console.log(`Rover now faces ${this.direction}.`);
   }
   
-  turnRight(newDirection) {
-    this.direction = newDirection;
+  turnRight() {
+    switch(this.direction){
+      case "N":
+        this.direction = "E";
+        break;
+      case "E":
+        this.direction = "S";
+        break;
+      case "S":
+        this.direction = "W";
+        break;
+      case "W":
+        this.direction = "N";
+        break;
+    }
+    console.log(`Rover now faces ${this.direction}.`);
   }
 
   moveForward(){ 
