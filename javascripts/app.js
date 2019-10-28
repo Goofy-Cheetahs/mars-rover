@@ -38,6 +38,20 @@ class Rover {
     this.y = 0
     this.travelLog = [{x:0,y:0}]
   }
+  checkBoundaries(){
+    if (this.x>10 || this.y>10){
+      console.log("rover off the boundaries. sorry!"); break;
+    }
+  }
+  checkObstacles(){
+    for(let i=0;i<obstacleArr.length;i++){
+      if(this.x=obstacleArr[i].x ||this.y=obstacleArr[i].y) {
+        console.log("the rover crashed to an obstacle!");break;
+      } 
+    }
+  }
+  checkBoundaries();
+  checkObstacles();
 
   turnLeft() {
   switch(this.direction){
@@ -79,50 +93,26 @@ class Rover {
     switch (this.direction){ 
       case "N": 
       this.y-=1;
-      if (this.y<-10 || this.y>10){
-        console.log("rover off the Map, sorry!");break;
-      }
-      for(i=0;i<obstacleArr.length;i++){
-        if(this.y=obstacleArr[i].y) {
-          console.log("the rover crashed to an obstacle!");break;
-        } 
-      }
+      checkBoundaries();
+      checkObstacles();
       this.travelLog.push({x:this.x , y:this.y});
       break; 
       case "E": 
       this.x+=1;
-      if (this.x<-10 || this.x>10){
-        console.log("rover off the Map, sorry!");break;
-      }
-      for(i=0;i<obstacleArr.length;i++){
-        if(this.x=obstacleArr[i].x) {
-          console.log("the rover crashed to an obstacle!");break;
-        } 
-      }
+      checkBoundaries();
+      checkObstacles();
       this.travelLog.push({x:this.x , y:this.y});
       break;
       case "S": 
       this.y+=1;
-      if (this.y<-10 || this.y>10){
-        console.log("rover off the Map, sorry!");break;
-      }
-      for(i=0;i<obstacleArr.length;i++){
-        if(this.y=obstacleArr[i].y) {
-          console.log("the rover crashed to an obstacle!");break;
-        } 
-      }
+      checkBoundaries();
+      checkObstacles();
       this.travelLog.push({x:this.x , y:this.y});
       break;
       case "W": 
       this.x-=1;
-      if (this.x<-10 || this.x>10){
-        console.log("rover off the Map, sorry!");break;
-      }
-      for(i=0;i<obstacleArr.length;i++){
-        if(this.x=obstacleArr[i].x) {
-          console.log("the rover crashed to an obstacle!");break;
-        } 
-      }
+      checkBoundaries();
+      checkObstacles();
       this.travelLog.push({x:this.x , y:this.y});
       break; 
       default: console.log('Error');
@@ -136,50 +126,26 @@ class Rover {
     switch (this.direction){ 
       case "N": 
       this.y+=1;
-      if (this.y<-10 || this.y>10){
-        console.log("rover off the Map, sorry!");break;
-      }
-      for(i=0;i<obstacleArr.length;i++){
-        if(this.y=obstacleArr[i].y) {
-          console.log("the rover crashed to an obstacle!");break;
-        } 
-      }
+      checkBoundaries();
+      checkObstacles();
       this.travelLog.push({x:this.x , y:this.y});
       break; 
       case "E":
       this.x-=1;
-      if (this.x<-10 || this.x>10){
-        console.log("rover off the Map, sorry!");break;
-      }
-      for(i=0;i<obstacleArr.length;i++){
-        if(this.x=obstacleArr[i].x) {
-          console.log("the rover crashed to an obstacle!");break;
-        } 
-      }
+      checkBoundaries();
+      checkObstacles();
       this.travelLog.push({x:this.x , y:this.y});
       break;
       case "S": 
       this.y-=1;
-      if (this.y<-10 || this.y>10){
-        console.log("rover off the Map, sorry!");break;
-      }
-      for(i=0;i<obstacleArr.length;i++){
-        if(this.y=obstacleArr[i].y) {
-          console.log("the rover crashed to an obstacle!");break;
-        } 
-      }
+      checkBoundaries();
+      checkObstacles();
       this.travelLog.push({x:this.x , y:this.y});
       break;
       case "W":
       this.x+=1;
-      if (this.x<-10 || this.x>10){
-        console.log("rover off the Map, sorry!");break;
-      }
-      for(i=0;i<obstacleArr.length;i++){
-        if(this.x=obstacleArr[i].x) {
-          console.log("the rover crashed to an obstacle!");break;
-        } 
-      }
+      checkBoundaries();
+      checkObstacles();
       this.travelLog.push({x:this.x , y:this.y}); 
       break; 
       default: console.log('Error');
