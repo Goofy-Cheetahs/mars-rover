@@ -3,6 +3,7 @@ class Rover {
     this.direction = 'N'
     this.x = 0
     this.y = 0
+    this.travelLog = [{x:0,y:0}]
   }
 
   turnLeft() {
