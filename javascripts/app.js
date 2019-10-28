@@ -4,11 +4,7 @@ class Rover {
   }
 }
 // ======================
-function turnLeft(rover){
-  console.log("turnLeft was called!");
-turnLeft() {
 
-}
 // moving part
 function moveForward(rover){
   console.log("moveForward was called")
