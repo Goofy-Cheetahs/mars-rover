@@ -92,4 +92,25 @@ case "W": rover.x+=1;rover.travelLog.push({x:rover.x , y:rover.y});break; defaul
     } 
   }
 
+  // command
+  let commands = (command) => {
+    console.log('commands was called!');
+
+    for (let i = 0; i < command.length; i++) {
+      switch (command[i]) {
+        case 'f': moveForward(rovers);
+        break;
+        case 'b': moveBackward(rovers);
+        break;
+        case 'l': turnLeft(rovers);
+        break;
+        case 'r': turnRight(rovers);
+        break;
+        default:
+          console.log('invalid command');
+          // continue;
+          break;
+      }
+    }
+  }
 }
