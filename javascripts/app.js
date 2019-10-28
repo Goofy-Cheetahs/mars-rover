@@ -64,7 +64,7 @@ class Rover {
       break; 
     } 
 
-    console.log(`Rover position ${this.x}, ${this.y}.`);
+    console.log(`Rover position (${this.x}, ${this.y}).`);
   }
 
   moveBackward(){
@@ -88,7 +88,7 @@ class Rover {
       default: console.log('Error');
       break; 
     } 
-    console.log(`Rover position ${this.x}, ${this.y}.`);
+    console.log(`Rover position (${this.x}, ${this.y}).`);
   }
 
   // command
