@@ -19,15 +19,13 @@ const grid = [
   }
   
   function createObstacles(numObstacles) {
-    let obstacleArr = [];
-  
-    for(let i=0; i<numObstacles; i++){
+      let obstacleArr = [];
+      for(let i=0; i<numObstacles; i++){
       let x = Math.floor(Math.random()*11);
       let y = Math.floor(Math.random()*11);
       let obs = new Obstacle(x, y);
       obstacleArr.push(obs);
     }
-  
     return obstacleArr;
   }
 // rover
@@ -40,13 +38,14 @@ class Rover {
   }
   checkBoundaries(){
     if (this.x>10 || this.y>10){
-      console.log("rover off the boundaries. sorry!"); break;
+      console.log("rover off the boundaries. sorry!"); return;
     }
   }
   checkObstacles(){
     for(let i=0;i<obstacleArr.length;i++){
       if(this.x=obstacleArr[i].x ||this.y=obstacleArr[i].y) {
-        console.log("the rover crashed to an obstacle!");break;
+        console.log("the rover crashed to an obstacle!");
+        return;
       } 
     }
   }
