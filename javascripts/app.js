@@ -18,6 +18,8 @@ const grid = [
     }
   }
   
+
+  obstacleArr = createObstacles(10)
   function createObstacles(numObstacles) {
       let obstacleArr = [];
       for(let i=0; i<numObstacles; i++){
@@ -43,14 +45,14 @@ class Rover {
   }
   checkObstacles(){
     for(let i=0;i<obstacleArr.length;i++){
-      if(this.x=obstacleArr[i].x ||this.y=obstacleArr[i].y) {
+      if(this.x==obstacleArr[i].x ||this.y==obstacleArr[i].y) {
         console.log("the rover crashed to an obstacle!");
         return;
       } 
     }
   }
-  checkBoundaries();
-  checkObstacles();
+  
+ 
 
   turnLeft() {
   switch(this.direction){
@@ -92,26 +94,26 @@ class Rover {
     switch (this.direction){ 
       case "N": 
       this.y-=1;
-      checkBoundaries();
-      checkObstacles();
+      this.checkBoundaries();
+      this.checkObstacles();
       this.travelLog.push({x:this.x , y:this.y});
       break; 
       case "E": 
       this.x+=1;
-      checkBoundaries();
-      checkObstacles();
+      this.checkBoundaries();
+      this.checkObstacles();
       this.travelLog.push({x:this.x , y:this.y});
       break;
       case "S": 
       this.y+=1;
-      checkBoundaries();
-      checkObstacles();
+      this.checkBoundaries();
+      this.checkObstacles();
       this.travelLog.push({x:this.x , y:this.y});
       break;
       case "W": 
       this.x-=1;
-      checkBoundaries();
-      checkObstacles();
+      this.checkBoundaries();
+      this.checkObstacles();
       this.travelLog.push({x:this.x , y:this.y});
       break; 
       default: console.log('Error');
@@ -125,26 +127,26 @@ class Rover {
     switch (this.direction){ 
       case "N": 
       this.y+=1;
-      checkBoundaries();
-      checkObstacles();
+      this.checkBoundaries();
+      this.checkObstacles();
       this.travelLog.push({x:this.x , y:this.y});
       break; 
       case "E":
       this.x-=1;
-      checkBoundaries();
-      checkObstacles();
+      this.checkBoundaries();
+      this.checkBoundaries();
       this.travelLog.push({x:this.x , y:this.y});
       break;
       case "S": 
       this.y-=1;
-      checkBoundaries();
-      checkObstacles();
+      this.checkBoundaries();
+      this.checkObstacles();
       this.travelLog.push({x:this.x , y:this.y});
       break;
       case "W":
       this.x+=1;
-      checkBoundaries();
-      checkObstacles();
+      this.checkBoundaries();
+      this.checkObstacles();
       this.travelLog.push({x:this.x , y:this.y}); 
       break; 
       default: console.log('Error');
