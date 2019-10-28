@@ -1,13 +1,15 @@
 // Rover Object Goes Here
 // ======================
-
+class Rover {
+  constructor(){
+    direction:'N'
+  }
+}
 // ======================
 function turnLeft(rover){
   console.log("turnLeft was called!");
-}
+turnLeft() {
 
-function turnRight(rover){
-  console.log("turnRight was called!");
 }
 // moving part
 function moveForward(rover){
@@ -22,3 +24,8 @@ case "S": rover.y-=1;rover.travelLog.push({x:rover.x , y:rover.y});break;
 case "W": rover.x+=1;rover.travelLog.push({x:rover.x , y:rover.y});break; default: console.log('Error');break; } }
 
 // end moving part
+
+turnRight() {
+  
+}
+
