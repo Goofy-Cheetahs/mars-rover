@@ -122,9 +122,9 @@ let r1 = new Rover("N");
 
 console.log(r1);
 
-r1.turnLeft();
-r1.turnLeft();
 r1.turnRight();
+r1.turnRight();
+r1.turnLeft();
 r1.moveBackward();
-r1.this.();
-r1.commands("rthis.this.this.ff")
+r1.moveForward();
+r1.commands("rffrfflb");
