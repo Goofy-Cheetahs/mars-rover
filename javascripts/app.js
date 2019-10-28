@@ -86,11 +86,6 @@ class Rover {
       break; 
     } 
   }
-}
-
-let r1 = new Rover("N");
-
-console.log(r1);
 
   // command
   let commands = (command) => {
@@ -114,5 +109,9 @@ console.log(r1);
     }
   }
 }
+
+console.log(r1);
+
+r1.turnLeft();
 r1.turnLeft();
 r1.moveBackward();
