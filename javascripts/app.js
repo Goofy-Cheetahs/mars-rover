@@ -11,7 +11,25 @@ const grid = [
     [{x:8,y:0},{x:8,y:1},{x:8,y:2},{x:8,y:3},{x:8,y:4},{x:8,y:5},{x:8,y:6},{x:8,y:7},{x:8,y:8},{x:8,y:9}],
     [{x:9,y:0},{x:9,y:1},{x:9,y:2},{x:9,y:3},{x:9,y:4},{x:9,y:5},{x:9,y:6},{x:9,y:7},{x:9,y:8},{x:9,y:9}]
   ]
-
+  class Obstacle {
+    constructor(x, y) {
+      this.x = x;
+      this.y = y;
+    }
+  }
+  
+  function createObstacles(numObstacles) {
+    let obstacleArr = [];
+  
+    for(let i=0; i<numObstacles; i++){
+      let x = Math.floor(Math.random()*11);
+      let y = Math.floor(Math.random()*11);
+      let obs = new Obstacle(x, y);
+      obstacleArr.push(obs);
+    }
+  
+    return obstacleArr;
+  }
 // rover
 class Rover {
   constructor(direction){
@@ -64,12 +82,22 @@ class Rover {
       if (this.y<-10 || this.y>10){
         console.log("rover off the Map, sorry!");break;
       }
+      for(i=0;i<obstacleArr.length;i++){
+        if(this.y=obstacleArr[i].y) {
+          console.log("the rover crashed to an obstacle!");break;
+        } 
+      }
       this.travelLog.push({x:this.x , y:this.y});
       break; 
       case "E": 
       this.x+=1;
       if (this.x<-10 || this.x>10){
         console.log("rover off the Map, sorry!");break;
+      }
+      for(i=0;i<obstacleArr.length;i++){
+        if(this.x=obstacleArr[i].x) {
+          console.log("the rover crashed to an obstacle!");break;
+        } 
       }
       this.travelLog.push({x:this.x , y:this.y});
       break;
@@ -78,12 +106,22 @@ class Rover {
       if (this.y<-10 || this.y>10){
         console.log("rover off the Map, sorry!");break;
       }
+      for(i=0;i<obstacleArr.length;i++){
+        if(this.y=obstacleArr[i].y) {
+          console.log("the rover crashed to an obstacle!");break;
+        } 
+      }
       this.travelLog.push({x:this.x , y:this.y});
       break;
       case "W": 
       this.x-=1;
       if (this.x<-10 || this.x>10){
         console.log("rover off the Map, sorry!");break;
+      }
+      for(i=0;i<obstacleArr.length;i++){
+        if(this.x=obstacleArr[i].x) {
+          console.log("the rover crashed to an obstacle!");break;
+        } 
       }
       this.travelLog.push({x:this.x , y:this.y});
       break; 
@@ -101,12 +139,22 @@ class Rover {
       if (this.y<-10 || this.y>10){
         console.log("rover off the Map, sorry!");break;
       }
+      for(i=0;i<obstacleArr.length;i++){
+        if(this.y=obstacleArr[i].y) {
+          console.log("the rover crashed to an obstacle!");break;
+        } 
+      }
       this.travelLog.push({x:this.x , y:this.y});
       break; 
       case "E":
       this.x-=1;
       if (this.x<-10 || this.x>10){
         console.log("rover off the Map, sorry!");break;
+      }
+      for(i=0;i<obstacleArr.length;i++){
+        if(this.x=obstacleArr[i].x) {
+          console.log("the rover crashed to an obstacle!");break;
+        } 
       }
       this.travelLog.push({x:this.x , y:this.y});
       break;
@@ -115,12 +163,22 @@ class Rover {
       if (this.y<-10 || this.y>10){
         console.log("rover off the Map, sorry!");break;
       }
+      for(i=0;i<obstacleArr.length;i++){
+        if(this.y=obstacleArr[i].y) {
+          console.log("the rover crashed to an obstacle!");break;
+        } 
+      }
       this.travelLog.push({x:this.x , y:this.y});
       break;
       case "W":
       this.x+=1;
       if (this.x<-10 || this.x>10){
         console.log("rover off the Map, sorry!");break;
+      }
+      for(i=0;i<obstacleArr.length;i++){
+        if(this.x=obstacleArr[i].x) {
+          console.log("the rover crashed to an obstacle!");break;
+        } 
       }
       this.travelLog.push({x:this.x , y:this.y}); 
       break; 
@@ -157,25 +215,7 @@ class Rover {
   }
 }
 
-class Obstacle {
-  constructor(x, y) {
-    this.x = x;
-    this.y = y;
-  }
-}
 
-function createObstacles(numObstacles) {
-  let obstacleArr = [];
-
-  for(let i=0; i<numObstacles; i++){
-    let x = Math.floor(Math.random()*11);
-    let y = Math.floor(Math.random()*11);
-    let obs = new Obstacle(x, y);
-    obstacleArr.push(obs);
-  }
-
-  return obstacleArr;
-}
 
 
 
