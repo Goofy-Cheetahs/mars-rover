@@ -3,6 +3,7 @@ class Rover {
     this.direction = 'N'
     this.x = 0
     this.y = 0
+    this.travelLog = [{x:0,y:0}]
   }
 
   turnLeft() {
@@ -76,5 +77,27 @@ let r1 = new Rover("N");
 
 console.log(r1);
 
+  // command
+  let commands = (command) => {
+    console.log('commands was called!');
+
+    for (let i = 0; i < command.length; i++) {
+      switch (command[i]) {
+        case 'f': moveForward(rovers);
+        break;
+        case 'b': moveBackward(rovers);
+        break;
+        case 'l': turnLeft(rovers);
+        break;
+        case 'r': turnRight(rovers);
+        break;
+        default:
+          console.log('invalid command');
+          // continue;
+          break;
+      }
+    }
+  }
+}
 r1.turnLeft();
 r1.moveBackward();
