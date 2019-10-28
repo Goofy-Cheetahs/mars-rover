@@ -95,7 +95,7 @@ class Rover {
   }
 }
 
-let r1 = new Rover(N);
+let r1 = new Rover("N");
 
 console.log(r1);
 
