@@ -60,30 +60,30 @@ case "W": rover.x+=1;rover.travelLog.push({x:rover.x , y:rover.y});break; defaul
     console.log(`Rover now faces ${this.direction}.`);
   }
 
-  moveForward(rover){ 
-    switch (rover.direction){ 
-      case "N": rover.y-=1;rover.travelLog.push({x:rover.x , y:rover.y});
+  moveForward(){ 
+    switch (this.direction){ 
+      case "N": this.y-=1;this.travelLog.push({x:this.x , y:this.y});
       break; 
-      case "E": rover.x+=1;rover.travelLog.push({x:rover.x , y:rover.y});
+      case "E": this.x+=1;this.travelLog.push({x:this.x , y:this.y});
       break;
-      case "S": rover.y+=1;rover.travelLog.push({x:rover.x , y:rover.y});
+      case "S": this.y+=1;this.travelLog.push({x:this.x , y:this.y});
       break;
-      case "W": rover.x-=1;rover.travelLog.push({x:rover.x , y:rover.y});
+      case "W": this.x-=1;this.travelLog.push({x:this.x , y:this.y});
       break; 
       default: console.log('Error');
       break; 
     } 
   }
 
-  moveBackward(rover){
-    switch (rover.direction){ 
-      case "N": rover.y+=1;rover.travelLog.push({x:rover.x , y:rover.y});
+  moveBackward(){
+    switch (this.direction){ 
+      case "N": this.y+=1;this.travelLog.push({x:this.x , y:this.y});
       break; 
-      case "E": rover.x-=1;rover.travelLog.push({x:rover.x , y:rover.y});
+      case "E": this.x-=1;this.travelLog.push({x:this.x , y:this.y});
       break;
-      case "S": rover.y-=1;rover.travelLog.push({x:rover.x , y:rover.y});
+      case "S": this.y-=1;this.travelLog.push({x:this.x , y:this.y});
       break;
-      case "W": rover.x+=1;rover.travelLog.push({x:rover.x , y:rover.y}); 
+      case "W": this.x+=1;this.travelLog.push({x:this.x , y:this.y}); 
       break; 
       default: console.log('Error');
       break; 
