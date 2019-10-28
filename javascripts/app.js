@@ -67,7 +67,8 @@ class Rover {
 
   moveBackward(){
     switch (this.direction){ 
-      case "N": this.y+=1;
+      case "N": 
+      this.y+=1;
       this.travelLog.push({x:this.x , y:this.y});
       break; 
       case "E":
