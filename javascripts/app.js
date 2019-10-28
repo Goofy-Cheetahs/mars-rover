@@ -97,14 +97,18 @@ class Rover {
 
     for (let i = 0; i < command.length; i++) {
       switch (command[i]) {
-        case 'f': moveForward(rovers);
-        break;
-        case 'b': moveBackward(rovers);
-        break;
-        case 'l': turnLeft(rovers);
-        break;
-        case 'r': turnRight(rovers);
-        break;
+        case 'f': 
+          this.moveForward();
+          break;
+        case 'b': 
+          this.moveBackward();
+          break;
+        case 'l': 
+          this.turnLeft();
+          break;
+        case 'r': 
+          this.turnRight();
+          break;
         default:
           console.log('invalid command');
           // continue;
@@ -120,4 +124,7 @@ console.log(r1);
 
 r1.turnLeft();
 r1.turnLeft();
+r1.turnRight();
 r1.moveBackward();
+r1.this.();
+r1.commands("rthis.this.this.ff")
