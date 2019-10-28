@@ -95,6 +95,8 @@ class Rover {
   }
 }
 
+let r1 = new Rover(N);
+
 console.log(r1);
 
 r1.turnLeft();
