@@ -88,7 +88,7 @@ class Rover {
   }
 
   // command
-  let commands = (command) => {
+  commands(command){
     console.log('commands was called!');
 
     for (let i = 0; i < command.length; i++) {
@@ -109,6 +109,8 @@ class Rover {
     }
   }
 }
+
+let r1 = new Rover(N);
 
 console.log(r1);
 
