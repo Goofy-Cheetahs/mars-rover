@@ -3,10 +3,12 @@ class Rover {
     direction:'N'
   }
 
-  turnLeft() {
+  turnLeft(newDirection) {
+    this.direction = newDirection;
   }
   
-  turnRight() {
+  turnRight(newDirection) {
+    this.direction = newDirection;
   }
 
  moveForward(rover){ console.log("moveForward was called") switch (rover.direction){ case "N": rover.y-=1;rover.travelLog.push({x:rover.x , y:rover.y});break; case "E": rover.x+=1;rover.travelLog.push({x:rover.x , y:rover.y});break;
@@ -18,9 +20,3 @@ class Rover {
  case "W": rover.x+=1;rover.travelLog.push({x:rover.x , y:rover.y});break; default: console.log('Error');break; } }
 
 }
-
-
-// end moving part
-
-  
-
