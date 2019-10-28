@@ -8,12 +8,11 @@ class Rover {
 // ======================
 function turnLeft(rover){
   console.log("turnLeft was called!");
+turnLeft() {
+
 }
 
-function turnRight(rover){
-  console.log("turnRight was called!");
+turnRight() {
+  
 }
 
-function moveForward(rover){
-  console.log("moveForward was called")
-}
