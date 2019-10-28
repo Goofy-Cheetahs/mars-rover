@@ -1,6 +1,8 @@
 class Rover {
-  constructor(){
-    direction:'N'
+  constructor(direction){
+    this.direction = 'N'
+    this.x = 0
+    this.y = 0
   }
 }
 // ======================
