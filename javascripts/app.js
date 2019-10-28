@@ -1,5 +1,3 @@
-// Rover Object Goes Here
-// ======================
 class Rover {
   constructor(){
     direction:'N'
@@ -25,7 +23,10 @@ case "W": rover.x+=1;rover.travelLog.push({x:rover.x , y:rover.y});break; defaul
 
 // end moving part
 
-turnRight() {
+  turnLeft() {
+  }
   
+  turnRight() {
+  }
 }
 
