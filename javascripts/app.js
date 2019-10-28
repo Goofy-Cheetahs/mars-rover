@@ -46,18 +46,30 @@ class Rover {
     switch (this.direction){ 
       case "N": 
       this.y-=1;
+      if (this.y<-10 || this.y>10){
+        console.log("rover off the Map, sorry!");break;
+      }
       this.travelLog.push({x:this.x , y:this.y});
       break; 
       case "E": 
       this.x+=1;
+      if (this.x<-10 || this.x>10){
+        console.log("rover off the Map, sorry!");break;
+      }
       this.travelLog.push({x:this.x , y:this.y});
       break;
       case "S": 
       this.y+=1;
+      if (this.y<-10 || this.y>10){
+        console.log("rover off the Map, sorry!");break;
+      }
       this.travelLog.push({x:this.x , y:this.y});
       break;
       case "W": 
       this.x-=1;
+      if (this.x<-10 || this.x>10){
+        console.log("rover off the Map, sorry!");break;
+      }
       this.travelLog.push({x:this.x , y:this.y});
       break; 
       default: console.log('Error');
@@ -71,18 +83,30 @@ class Rover {
     switch (this.direction){ 
       case "N": 
       this.y+=1;
+      if (this.y<-10 || this.y>10){
+        console.log("rover off the Map, sorry!");break;
+      }
       this.travelLog.push({x:this.x , y:this.y});
       break; 
       case "E":
       this.x-=1;
+      if (this.x<-10 || this.x>10){
+        console.log("rover off the Map, sorry!");break;
+      }
       this.travelLog.push({x:this.x , y:this.y});
       break;
       case "S": 
       this.y-=1;
+      if (this.y<-10 || this.y>10){
+        console.log("rover off the Map, sorry!");break;
+      }
       this.travelLog.push({x:this.x , y:this.y});
       break;
       case "W":
       this.x+=1;
+      if (this.x<-10 || this.x>10){
+        console.log("rover off the Map, sorry!");break;
+      }
       this.travelLog.push({x:this.x , y:this.y}); 
       break; 
       default: console.log('Error');
