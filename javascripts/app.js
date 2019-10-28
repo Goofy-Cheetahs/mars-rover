@@ -73,7 +73,7 @@ class Rover {
   }
 
   // command
-  let commands = (command) => {
+  commands(command){
     console.log('commands was called!');
 
     for (let i = 0; i < command.length; i++) {
