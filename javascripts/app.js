@@ -1,6 +1,6 @@
 class Rover {
-  constructor(){
-    direction:'N'
+  constructor(direction){
+    this.direction = direction;
   }
 
   turnLeft() {
@@ -39,9 +39,10 @@ class Rover {
     console.log(`Rover now faces ${this.direction}.`);
   }
 
-  moveForward(rover){ 
+  moveForward(){ 
     switch (rover.direction){ 
-      case "N": rover.y-=1;rover.travelLog.push({x:rover.x , y:rover.y});
+      case "N": 
+      rover.y-=1;rover.travelLog.push({x:rover.x , y:rover.y});
       break; 
       case "E": rover.x+=1;rover.travelLog.push({x:rover.x , y:rover.y});
       break;
@@ -68,5 +69,10 @@ class Rover {
       break; 
     } 
   }
-
 }
+
+let r1 = new Rover("N");
+
+console.log(r1);
+
+r1.turnLeft();
