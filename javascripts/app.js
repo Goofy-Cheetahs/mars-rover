@@ -157,6 +157,39 @@ class Rover {
   }
 }
 
+class Obstacle {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+}
+
+function createObstacles(numObstacles) {
+  let obstacleArr = [];
+
+  for(let i=0; i<numObstacles; i++){
+    let x = Math.floor(Math.random()*11);
+    let y = Math.floor(Math.random()*11);
+    let obs = new Obstacle(x, y);
+    obstacleArr.push(obs);
+  }
+
+  return obstacleArr;
+}
+
+
+
+
+
+/******* testing code *******/
+let o1 = new Obstacle(1, 1);
+
+console.log(o1);
+
+let arr = createObstacles(4);
+console.log(arr);
+
+
 let r1 = new Rover("N");
 
 console.log(r1);
@@ -167,3 +200,5 @@ r1.turnLeft();
 r1.moveBackward();
 r1.moveForward();
 r1.commands("rffrfflb");
+
+/******* testing code *******/
