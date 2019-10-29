@@ -216,11 +216,11 @@ window.onload = function(){
   let roverPosition = document.querySelector(`.row${x} > .col${y}`).appendChild(theRover);
   
   
-    const theObstacle=document.createElement('div');
-    theObstacle.id="obstacle";
-    let x=Math.floor(Math.random()*9)+2;
-    let y=Math.floor(Math.random()*9)+2;  
-    let obstaclePosition = document.querySelector(`.row${x} > .col${y}`).appendChild(theObstacle);
+  const theObstacle=document.createElement('div');
+  theObstacle.id="obstacle";
+  let b=Math.floor(Math.random()*9)+2;
+  let c=Math.floor(Math.random()*9)+2;  
+  let obstaclePosition = document.querySelector(`.row${b} > .col${c}`).appendChild(theObstacle);
   
 
 
