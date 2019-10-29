@@ -1,7 +1,7 @@
-/*
-Obstacle class
-- Create an obtacle at position (x,y) 
-*/
+/**
+ * Obstacle class
+ * create an obstacle with position (x,y)
+ */
 class Obstacle {
   constructor(x, y) {
     this.x = x;
@@ -9,6 +9,9 @@ class Obstacle {
   }
 }
 
+/**
+ * Creates n amount of obstacles
+ */
 function createObstacles(numObstacles) {
     let obstacleArr = [];
     for(let i=0; i<numObstacles; i++){
@@ -20,19 +23,32 @@ function createObstacles(numObstacles) {
   return obstacleArr;
 }
 
-// rover
+/**
+ * Rover class
+ */
 class Rover {
+  /**
+   * Rover constructor
+   */
   constructor(direction){
     this.direction = 'N'
     this.x = 0
     this.y = 0
     this.travelLog = [{x:0,y:0}]
   }
+
+  /**
+   * Check if the rover is out of bounds
+   */
   checkBoundaries(){
     if (this.x>10 || this.y>10){
       console.log("rover off the boundaries. sorry!"); return;
     }
   }
+
+  /**
+   * Check if the rover hits an obstacles
+   */
   checkObstacles(){
     for(let i=0;i<obstacleArr.length;i++){
       if(this.x==obstacleArr[i].x ||this.y==obstacleArr[i].y) {
@@ -40,134 +56,148 @@ class Rover {
         return;
       } 
     }
-}
-
-turnLeft() {
-switch(this.direction){
-  case "N":
-    this.direction = "W";
-    break;
-  case "W":
-    this.direction = "S";
-    break;
-  case "S":
-    this.direction = "E";
-    break;
-  case "E":
-    this.direction = "N";
-    break;
   }
-  console.log(`Rover now faces ${this.direction}.`);
-}
-  
-turnRight() {
+
+  /**
+   * Turn the rover 90 degress to the left
+   */
+  turnLeft() {
   switch(this.direction){
     case "N":
-      this.direction = "E";
-      break;
-    case "E":
-      this.direction = "S";
-      break;
-    case "S":
       this.direction = "W";
       break;
     case "W":
+      this.direction = "S";
+      break;
+    case "S":
+      this.direction = "E";
+      break;
+    case "E":
       this.direction = "N";
       break;
+    }
+    console.log(`Rover now faces ${this.direction}.`);
   }
-  console.log(`Rover now faces ${this.direction}.`);
-}
-
-moveForward(){ 
-  switch (this.direction){ 
-    case "N": 
-    this.y-=1;
-    this.checkBoundaries();
-    this.checkObstacles();
-    this.travelLog.push({x:this.x , y:this.y});
-    break; 
-    case "E": 
-    this.x+=1;
-    this.checkBoundaries();
-    this.checkObstacles();
-    this.travelLog.push({x:this.x , y:this.y});
-    break;
-    case "S": 
-    this.y+=1;
-    this.checkBoundaries();
-    this.checkObstacles();
-    this.travelLog.push({x:this.x , y:this.y});
-    break;
-    case "W": 
-    this.x-=1;
-    this.checkBoundaries();
-    this.checkObstacles();
-    this.travelLog.push({x:this.x , y:this.y});
-    break; 
-    default: console.log('Error');
-    break; 
-  } 
-
-  console.log(`Rover position (${this.x}, ${this.y}).`);
-}
-
-moveBackward(){
-  switch (this.direction){ 
-    case "N": 
-    this.y+=1;
-    this.checkBoundaries();
-    this.checkObstacles();
-    this.travelLog.push({x:this.x , y:this.y});
-    break; 
-    case "E":
-    this.x-=1;
-    this.checkBoundaries();
-    this.checkBoundaries();
-    this.travelLog.push({x:this.x , y:this.y});
-    break;
-    case "S": 
-    this.y-=1;
-    this.checkBoundaries();
-    this.checkObstacles();
-    this.travelLog.push({x:this.x , y:this.y});
-    break;
-    case "W":
-    this.x+=1;
-    this.checkBoundaries();
-    this.checkObstacles();
-    this.travelLog.push({x:this.x , y:this.y}); 
-    break; 
-    default: console.log('Error');
-    break; 
-  } 
-  console.log(`Rover position (${this.x}, ${this.y}).`);
-}
-
-// command
-commands(command){
-  console.log('commands was called!');
-
-  for (let i = 0; i < command.length; i++) {
-    switch (command[i]) {
-      case 'f': 
-        this.moveForward();
+  
+  /**
+   * Turn the rover 90 degrees to the right
+   */
+  turnRight() {
+    switch(this.direction){
+      case "N":
+        this.direction = "E";
         break;
-      case 'b': 
-        this.moveBackward();
+      case "E":
+        this.direction = "S";
         break;
-      case 'l': 
-        this.turnLeft();
+      case "S":
+        this.direction = "W";
         break;
-      case 'r': 
-        this.turnRight();
-        break;
-      default:
-        console.log('invalid command');
-        // continue;
+      case "W":
+        this.direction = "N";
         break;
     }
+    console.log(`Rover now faces ${this.direction}.`);
   }
-}
+
+  /**
+   * Move the rover one position forward
+   */
+  moveForward(){ 
+    switch (this.direction){ 
+      case "N": 
+      this.y-=1;
+      this.checkBoundaries();
+      this.checkObstacles();
+      this.travelLog.push({x:this.x , y:this.y});
+      break; 
+      case "E": 
+      this.x+=1;
+      this.checkBoundaries();
+      this.checkObstacles();
+      this.travelLog.push({x:this.x , y:this.y});
+      break;
+      case "S": 
+      this.y+=1;
+      this.checkBoundaries();
+      this.checkObstacles();
+      this.travelLog.push({x:this.x , y:this.y});
+      break;
+      case "W": 
+      this.x-=1;
+      this.checkBoundaries();
+      this.checkObstacles();
+      this.travelLog.push({x:this.x , y:this.y});
+      break; 
+      default: console.log('Error');
+      break; 
+    } 
+
+    console.log(`Rover position (${this.x}, ${this.y}).`);
+  }
+
+  /**
+   * Move the rover one position backward
+   */
+  moveBackward(){
+    switch (this.direction){ 
+      case "N": 
+        this.y+=1;
+        this.checkBoundaries();
+        this.checkObstacles();
+        this.travelLog.push({x:this.x , y:this.y});
+        break; 
+      case "E":
+        this.x-=1;
+        this.checkBoundaries();
+        this.checkBoundaries();
+        this.travelLog.push({x:this.x , y:this.y});
+        break;
+      case "S": 
+        this.y-=1;
+        this.checkBoundaries();
+        this.checkObstacles();
+        this.travelLog.push({x:this.x , y:this.y});
+        break;
+      case "W":
+        this.x+=1;
+        this.checkBoundaries();
+        this.checkObstacles();
+        this.travelLog.push({x:this.x , y:this.y}); 
+        break; 
+      default: console.log('Error');
+      break; 
+    } 
+    console.log(`Rover position (${this.x}, ${this.y}).`);
+  }
+
+  /**
+   * Pass an array of commands to the rover
+   */
+  commands(command){
+    console.log('commands was called!');
+
+    for (let i = 0; i < command.length; i++) {
+      switch (command[i]) {
+        case 'f': 
+          this.moveForward();
+          break;
+        case 'b': 
+          this.moveBackward();
+          break;
+        case 'l': 
+          this.turnLeft();
+          break;
+        case 'r': 
+          this.turnRight();
+          break;
+        default:
+          console.log('invalid command');
+          // continue;
+          break;
+      }
+    }
+  }
 }
 
 // // grid
