@@ -209,6 +209,14 @@ window.onload = function(){
   let y = 1;
 
   let roverPosition = document.querySelector(`.row${x} > .col${y}`).appendChild(theRover);
+  
+  
+    const theObstacle=document.createElement('div');
+    theObstacle.id="obstacle";
+    let x=Math.floor(Math.random()*9)+2;
+    let y=Math.floor(Math.random()*9)+2;  
+    let obstaclePosition = document.querySelector(`.row${x} > .col${y}`).appendChild(theObstacle);
+  
 
 
   document.addEventListener('keydown', logKey);
