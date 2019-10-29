@@ -1,6 +1,7 @@
 body{
     background-image: url(./img/mars2.jpg);
     background-size: cover;
+    background-position: 50% 0;
 }
 .whole-page{
   height: 100vh;
