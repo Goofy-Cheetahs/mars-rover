@@ -207,10 +207,11 @@ window.onload = function(){
 
   let roverPosition = document.querySelector(`.row${1} > .col${1}`).appendChild(theRover);
 
-  let clickPosition;
-  
-  roverPosition.onclick = function() {
-    console.log(clickPosition);
+
+  document.addEventListener('keydown', logKey);
+
+  function logKey() {
+    
   }
 
   
