@@ -238,19 +238,7 @@ window.onload = function(){
   let x = 1;
   let y = 1;
 
-<<<<<<< HEAD
-  let roverPosition = document.querySelector(`.row${x} > .col${y}`).appendChild(theRover);
-  
-  
-  const theObstacle=document.createElement('div');
-  theObstacle.id="obstacle";
-  let b=Math.floor(Math.random()*9)+2;
-  let c=Math.floor(Math.random()*9)+2;  
-  let obstaclePosition = document.querySelector(`.row${b} > .col${c}`).appendChild(theObstacle);
-  
-=======
   let roverPosition = document.querySelector(`.row${x} > .col${y}`).appendChild(theRover);  
->>>>>>> 99844b667f9861995cd502800c16660f5cc4f4fc
 
 
   document.addEventListener('keydown', logKey);
