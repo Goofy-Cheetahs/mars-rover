@@ -206,7 +206,7 @@ window.onload = function(){
 
   console.log(theRover)
 
-  theRover.setAttribute('src','/img/mars-rover.png')
+  theRover.setAttribute('src','./img/mars-rover.png')
   console.log(theRover)
   theRover.id = 'rover';
 
