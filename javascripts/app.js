@@ -240,10 +240,6 @@ r1.moveBackward();
 r1.moveForward();
 r1.commands("rffrfflb");
 
-<<<<<<< HEAD
-=======
-obstacleArr = createObstacles(10)
->>>>>>> 55fb9249490be84d593a19b5f969ab62c71eea88
 
 /******* testing code *******/
 //document.querySelector("body > h1").innerHTML = '<h1 class="hi">hi</h1>'
