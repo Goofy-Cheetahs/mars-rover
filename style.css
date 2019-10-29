@@ -1,7 +1,14 @@
-* {
-  transition: 4s; 
+body{
+    background-image: url(./img/mars2.jpg);
+    background-size: cover;
+    background-position: 50% 0;
+    font-family: 'Space Mono',
+    monospace;
 }
-
+.header-title{
+    color: #ffffff;
+    text-align: center;
+}
 .whole-page{
   height: 100vh;
   width: 100vw;
@@ -14,8 +21,8 @@
 .game-board{
   width: 60%;
   height: 60vh;
-  border: 1px solid orangered;
-  border-radius: 2px;
+  border: 5px solid orangered;
+  border-radius: 10px;
 }
 
 .row{

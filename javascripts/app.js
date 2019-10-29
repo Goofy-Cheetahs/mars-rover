@@ -213,6 +213,8 @@ window.onload = function(){
     console.log(clickPosition);
   }
 
+  
+
 }
 
 
