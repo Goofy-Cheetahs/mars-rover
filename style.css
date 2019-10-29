@@ -1,3 +1,7 @@
+body{
+    background-image: url(./img/mars2.jpg);
+    background-size: cover;
+}
 .whole-page{
   height: 100vh;
   width: 100vw;
