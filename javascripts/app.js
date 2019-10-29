@@ -204,22 +204,59 @@
 window.onload = function(){
   let theRover = document.createElement('img')
 
-  console.log(theRover)
+  // console.log(theRover)
 
   theRover.setAttribute('src','./img/mars-rover.png')
-  console.log(theRover)
+  // console.log(theRover)
   theRover.id = 'rover';
+
+  let obstacle1 = document.createElement('img')
+  obstacle1.setAttribute('src','./img/rock.jpeg')
+  obstacle1.id = 'rover';
+  let obstacle1Pos = document.querySelector(`.row${9} > .col${9}`).appendChild(obstacle1);  
+
+  let obstacle2 = document.createElement('img')
+  obstacle2.setAttribute('src','./img/rock.jpeg')
+  obstacle2.id = 'rover';
+  let obstacle2Pos = document.querySelector(`.row${5} > .col${7}`).appendChild(obstacle2);  
+
+  let obstacle3 = document.createElement('img')
+  obstacle3.setAttribute('src','./img/rock.jpeg')
+  obstacle3.id = 'rover';
+  let obstacle3Pos = document.querySelector(`.row${9} > .col${2}`).appendChild(obstacle3);  
+
+  let obstacle4 = document.createElement('img')
+  obstacle4.setAttribute('src','./img/rock.jpeg')
+  obstacle4.id = 'rover';
+  let obstacle4Pos = document.querySelector(`.row${3} > .col${2}`).appendChild(obstacle4);  
+  
+  let obstacle5 = document.createElement('img')
+  obstacle5.setAttribute('src','./img/rock.jpeg')
+  obstacle5.id = 'rover';
+  let obstacle5Pos = document.querySelector(`.row${5} > .col${9}`).appendChild(obstacle5);  
 
   let x = 1;
   let y = 1;
 
+<<<<<<< HEAD
+  let roverPosition = document.querySelector(`.row${x} > .col${y}`).appendChild(theRover);
+  
+  
+  const theObstacle=document.createElement('div');
+  theObstacle.id="obstacle";
+  let b=Math.floor(Math.random()*9)+2;
+  let c=Math.floor(Math.random()*9)+2;  
+  let obstaclePosition = document.querySelector(`.row${b} > .col${c}`).appendChild(theObstacle);
+  
+=======
   let roverPosition = document.querySelector(`.row${x} > .col${y}`).appendChild(theRover);  
+>>>>>>> 99844b667f9861995cd502800c16660f5cc4f4fc
 
 
   document.addEventListener('keydown', logKey);
 
   function logKey(e) {
-    console.log(e);
+    // console.log(e);
     console.log(e.key);
 
     switch(e.key) {
