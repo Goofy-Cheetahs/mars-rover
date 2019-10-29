@@ -208,4 +208,6 @@ r1.moveBackward();
 r1.moveForward();
 r1.commands("rffrfflb");
 
+
 /******* testing code *******/
+//document.querySelector("body > h1").innerHTML = '<h1 class="hi">hi</h1>'
