@@ -202,7 +202,12 @@
 
 
 window.onload = function(){
-  const theRover = document.createElement('div');
+  let theRover = document.createElement('img')
+
+  console.log(theRover)
+
+  theRover.setAttribute('src','/img/mars-rover.png')
+  console.log(theRover)
   theRover.id = 'rover';
 
   let x = 1;
