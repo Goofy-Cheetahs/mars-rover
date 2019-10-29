@@ -205,13 +205,36 @@ window.onload = function(){
   const theRover = document.createElement('div');
   theRover.id = 'rover';
 
-  let roverPosition = document.querySelector(`.row${1} > .col${1}`).appendChild(theRover);
+  let x = 1;
+  let y = 1;
+
+  let roverPosition = document.querySelector(`.row${x} > .col${y}`).appendChild(theRover);
 
 
   document.addEventListener('keydown', logKey);
 
-  function logKey() {
-    
+  function logKey(e) {
+    console.log(e);
+    console.log(e.key);
+
+    switch(e.key) {
+      case "ArrowRight":
+        y++;
+        roverPosition = document.querySelector(`.row${x} > .col${y}`).appendChild(theRover);
+        break;
+      case "ArrowLeft":
+        y--;
+        roverPosition = document.querySelector(`.row${x} > .col${y}`).appendChild(theRover);
+        break;
+      case "ArrowDown":
+        x++;
+        roverPosition = document.querySelector(`.row${x} > .col${y}`).appendChild(theRover);
+        break;
+      case "ArrowUp":
+        x--;
+        roverPosition = document.querySelector(`.row${x} > .col${y}`).appendChild(theRover);
+        break;
+    }
   }
 
   
